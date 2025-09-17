@@ -1,0 +1,25 @@
+﻿<Window x:Class="TestWorkAdoNET.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TestWorkAdoNET"
+        mc:Ignorable="d"
+        Title="Подключение к базе данных" Height="450" Width="800">
+    <StackPanel Margin="60,20">
+        <TextBlock Text="Data Source" FontSize="20"/>
+        <TextBox FontSize="25" Name="DataSource_TextBox"
+                 Text="IN-PKUO4L9RGT8"/>
+        <TextBlock Text="Initial Catalog" FontSize="20"/>
+        <TextBox FontSize="25" Name="InitialCatalog_TextBox"
+                 Text="TestWorkADOnet"/>
+        <CheckBox IsChecked="False" Name="Auntif_CheckBox" Content="Аунтификация по логину и паролю" FontSize="20"/>
+        <TextBlock Text="Login" FontSize="25"/>
+        <TextBox FontSize="20" Name="Login_TextBox"
+                 IsEnabled="{Binding ElementName=Auntif_CheckBox,Path=IsChecked}"/>
+        <TextBlock Text="Password" FontSize="25"/>
+        <PasswordBox FontSize="20" Name="Password_PasswordBox"
+                     IsEnabled="{Binding ElementName=Auntif_CheckBox,Path=IsChecked}"/>
+        <Button FontSize="20" Content="Подключиться" Margin="50,20" Click="ConnectDB_Click"/>
+    </StackPanel>
+</Window>
