@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -25,18 +26,29 @@ namespace TestWorkAdoNET
         {
             InitializeComponent();
             this.connection = connection;
+            getUsers();
         }
 
-        private object getUsers()
+        private void getUsers()
         {
-            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM GetPersons();", connection);
+            SqlCommand sqlCommand = new SqlCommand("SELECT * FROM  dbo.GetPersons()", connection);
+
             try
             {
-                sqlCommand.E;
 
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlCommand);
+                DataTable dataTable = new DataTable();
+
+                dataAdapter.Fill(dataTable);
+
+                // Привязываем DataTable к DataGrid
+                dataGrid.ItemsSource = dataTable.DefaultView;
+                connection.Close();
             }
-            catch (Exception ex) { }
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ошибка: {ex.Message}");
+            }
         }
     }
 }

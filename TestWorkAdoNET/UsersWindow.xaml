@@ -7,6 +7,15 @@
         mc:Ignorable="d"
         Title="UsersWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <DataGrid Grid.Column="1" Grid.Row="1" Name="dataGrid"/>
+        <StackPanel />
     </Grid>
 </Window>

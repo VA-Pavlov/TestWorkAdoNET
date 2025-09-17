@@ -9,7 +9,7 @@
     <StackPanel Margin="60,20">
         <TextBlock Text="Data Source" FontSize="20"/>
         <TextBox FontSize="25" Name="DataSource_TextBox"
-                 Text="IN-PKUO4L9RGT8"/>
+                 Text="WIN-PKUO4L9RGT8"/>
         <TextBlock Text="Initial Catalog" FontSize="20"/>
         <TextBox FontSize="25" Name="InitialCatalog_TextBox"
                  Text="TestWorkADOnet"/>
